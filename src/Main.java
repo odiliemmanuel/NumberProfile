@@ -6,7 +6,7 @@ public class Main {
 
         NumberStatus number = new NumberStatus();
 
-        number.getProfile(5);
+        number.getProfile("-5");
     }
 }
 

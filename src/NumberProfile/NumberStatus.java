@@ -1,13 +1,11 @@
 package NumberProfile;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class NumberStatus {
 
 
-    public boolean isEvenNumber(int number) {
-
+    public boolean isEvenNumber(String input) {
+        int number = Integer.parseInt(input);
         if(number % 2 == 0){
             System.out.println(number + " is an Even Number");
             return true;
@@ -21,7 +19,8 @@ public class NumberStatus {
     }
 
 
-    public boolean isAPerfectNumber(int number) {
+    public boolean isAPerfectNumber(String input) {
+        int number = Integer.parseInt(input);
         int factor = 0;
         for(int count = 1; count <= number/2; count ++){
             if(number % count == 0){
@@ -40,7 +39,8 @@ public class NumberStatus {
     }
 
 
-    public int squareOfNumber(int number) {
+    public int squareOfNumber(String input) {
+        int number = Integer.parseInt(input);
         int result = number * number;
         System.out.println("square of " + number + " is " + result);
 
@@ -49,7 +49,8 @@ public class NumberStatus {
     }
 
 
-    public int factorial(int number){
+    public int factorial(String input){
+        int number = Integer.parseInt(input);
         int factorial = 1;
 
         for(int count = 1; count <= number; count ++){
@@ -60,8 +61,10 @@ public class NumberStatus {
         return factorial;
     }
 
-    public boolean checkIsPalindrome(int number) {
 
+
+    public boolean isPalindrome(String input){
+        int number = Integer.parseInt(input);
         int value = number;
         int reversedNumber = 0;
         int digit = 0;
@@ -81,7 +84,10 @@ public class NumberStatus {
         }
     }
 
-    public boolean checkArmStrongNumber(int number) {
+
+
+    public boolean isArmStrongNumber(String input) {
+        int number = Integer.parseInt(input);
         String length = Integer.toString(number);
         int value = length.length();
 
@@ -110,8 +116,8 @@ public class NumberStatus {
     }
 
 
-    public boolean isPrime(int number) {
-
+    public boolean isPrime(String input) {
+        int number = Integer.parseInt(input);
         int counter = 0;
         for(int count = 1; count <= number; count ++){
             if(number % count == 0){
@@ -125,15 +131,157 @@ public class NumberStatus {
         return false;
     }
 
-    public void getProfile(int number) {
+
+
+    public boolean isInteger(String number){
+      if(number != null == number.matches("[-?\\d]+")){
+          System.out.println(number + " is an Integer");
+          return true;
+      }
+      else{
+          return false;
+      }
+    }
+
+
+
+    public boolean isNaturalNumber(String input){
+        int number = Integer.parseInt(input);
+        if(Math.floor(number) == number && number > 0){
+            System.out.println(number + " is a natural number");
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
+
+
+    public boolean isWholeNumber(String input){
+        int number = Integer.parseInt(input);
+        if(Math.floor(number) == number && number >= 0){
+            System.out.println(number + " is a whole number");
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
+
+    public boolean isCompositeNumber(String input) {
+        int number = Integer.parseInt(input);
+        int factorCount = 0;
+        for(int count = 1; count <= number; count ++){
+            if(number % count == 0){
+                factorCount++;
+            }
+        }
+        if(factorCount > 2){
+            System.out.println(number + " is a composite number");
+            return true;
+        }
+        return false;
+    }
+
+
+    public boolean isDeficientNumber(String input){
+        int number = Integer.parseInt(input);
+        int sum = 0;
+        for(int count = 1; count < number; count ++){
+            if(number % count == 0){
+                sum += count;
+            }
+        }
+
+        if(sum < number){
+            System.out.println(number + " is a deficient number");
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
+    public boolean isAbundantNumber(String input) {
+        int number = Integer.parseInt(input);
+        int sum = 0;
+        for(int count = 1; count < number; count ++){
+            if(number % count == 0){
+                sum += count;
+            }
+        }
+
+        if(sum > number){
+            System.out.println(number + " is an abundant number");
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
+    public boolean isSquareNumber(String input) {
+        int number = Integer.parseInt(input);
+        for(int count = 1; count <= number; count ++){
+            if(count * count == number){
+                System.out.println(number + " is a square number");
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+
+    public boolean isCubeNumber(String input) {
+        int number = Integer.parseInt(input);
+        for(int count = 1; count <= number; count ++){
+            if(count * count * count == number){
+                System.out.println(number + " is a cube number");
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isFibonacciNumber(String input) {
+        int number = Integer.parseInt(input);
+        for(int count = number; count >= 0 || count >= 1; count --){
+            if(count - 2 + count - 1 == number){
+                System.out.println(number + " is a fibonacci number");
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+
+
+    public void getProfile(String number) {
 
         isEvenNumber(number);
         isAPerfectNumber(number);
         squareOfNumber(number);
         factorial(number);
-        checkIsPalindrome(number);
-        checkArmStrongNumber(number);
+        isPalindrome(number);
+        isArmStrongNumber(number);
         isPrime(number);
+        isInteger(number);
+        isNaturalNumber(number);
+        isWholeNumber(number);
+        isCompositeNumber(number);
+        isDeficientNumber(number);
+        isAbundantNumber(number);
+        isSquareNumber(number);
+        isCubeNumber(number);
 
 
 
