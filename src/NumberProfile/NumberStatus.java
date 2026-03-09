@@ -250,22 +250,15 @@ public class NumberStatus {
         return false;
     }
 
-    public boolean isFibonacciNumber(String input) {
-        int number = Integer.parseInt(input);
-        for(int count = number; count >= 0 || count >= 1; count --){
-            if(count - 2 + count - 1 == number){
-                System.out.println(number + " is a fibonacci number");
-                return true;
-            }
-        }
-        return false;
-    }
+//    public boolean isFibonacciNumber(String input) {
+//        int number = Integer.parseInt(input);
+//
+//
+//    }
 
 
 
-
-
-    public void getProfile(String number) {
+    public void getProfile (String number){
 
         isEvenNumber(number);
         isAPerfectNumber(number);
@@ -282,7 +275,6 @@ public class NumberStatus {
         isAbundantNumber(number);
         isSquareNumber(number);
         isCubeNumber(number);
-
 
 
     }
