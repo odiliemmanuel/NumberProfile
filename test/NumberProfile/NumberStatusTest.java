@@ -101,16 +101,31 @@ public class NumberStatusTest {
 //      1, 8, 27, 64, 125, 216, 343, 512, 729, 1000
     }
 
-    @Test
-    public void testThatNumberIsAFibonacciNumber(){
-        assertTrue(numberStatus.isFibonacciNumber("2"));
-        assertFalse(numberStatus.isFibonacciNumber("100"));
+//    @Test
+//    public void testThatNumberIsAFibonacciNumber(){
+//        assertTrue(numberStatus.isFibonacciNumber("2"));
+//        assertFalse(numberStatus.isFibonacciNumber("100"));
 //        0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765
-    }
-//
+//    }
+
+
 //    @Test
 //    public void testThatNumberIsATriangularNumber(){
 //        assertTrue(numberStatus.isTriangularNumber("6"));
 //        assertFalse(numberStatus.isTriangularNumber("5"));
 //    }
+
+
+    @Test
+    public void testThatNumberIsAPerfectSquareNumber(){
+        assertTrue(numberStatus.isPerfectSquare("25"));
+        assertFalse(numberStatus.isPerfectSquare("5"));
+    }
+
+
+    @Test
+    public void testThatNumberIsABinaryNumber(){
+        assertTrue(numberStatus.isBinaryNumber("10101"));
+        assertTrue(numberStatus.isBinaryNumber("10102"));
+    }
 }

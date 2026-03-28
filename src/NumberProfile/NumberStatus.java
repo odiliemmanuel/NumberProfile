@@ -250,13 +250,32 @@ public class NumberStatus {
         return false;
     }
 
-//    public boolean isFibonacciNumber(String input) {
-//        int number = Integer.parseInt(input);
-//
-//
-//    }
 
+    public boolean isPerfectSquare(String input) {
+        int number = Integer.parseInt(input);
+        int squareRootOfNumber = (int)Math.sqrt(number);
+        if(number == squareRootOfNumber * squareRootOfNumber){
+            System.out.println(number + " is a perfect square number");
+            return true;
+        }
+        return false;
+    }
 
+    public boolean isBinaryNumber(String input) {
+       String [] numbers =  input.split("");
+       int [] array = new int[numbers.length];
+       for(int index = 0; index < numbers.length; index++){
+            array[index] = Integer.parseInt(numbers[index]);
+            if(array[index] == 1 ||  array[index] == 0){
+
+                System.out.println( input + " is a binary number ");
+                continue;
+            }
+
+       }
+       return false;
+
+    }
 
     public void getProfile (String number){
 
@@ -275,7 +294,9 @@ public class NumberStatus {
         isAbundantNumber(number);
         isSquareNumber(number);
         isCubeNumber(number);
+        isPerfectSquare(number);
 
 
     }
+
 }
